@@ -1,12 +1,8 @@
-<?= 'Hello, Php' ?>
-
 <?php
-echo('aaa\n');
-print("bbb\n");
 
-$xx = array(
-  'aa' => '11',
-  'bb' => '22'
-);
-print_r($xx);
+$files = array_filter(scandir('./'), function ($file) {
+    return pathinfo($file, PATHINFO_EXTENSION) === 'php';
+});
+
+print_r($files);
 ?>
